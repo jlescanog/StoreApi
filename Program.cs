@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddDbContext<StoreDBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConectionSQL")
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConectionSQL2")
                      ?? throw new Exception("missing connectionstring")));
 
 builder.Services.AddControllers();
