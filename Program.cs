@@ -1,12 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using StoreApi.Data;
+using StoreApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddDbContext<StoreDBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConectionSQL2")
+builder.Services.AddDbContext<AdventureStoreDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
                      ?? throw new Exception("missing connectionstring")));
 
 builder.Services.AddControllers();
